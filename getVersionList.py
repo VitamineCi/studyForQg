@@ -30,8 +30,8 @@ browser = webdriver.Chrome(chrome_options = chrome_options)
 url = "https://itunes.apple.com/cn/app/%E5%AD%A6%E4%B9%A0%E5%BC%BA%E5%9B%BD/id1426355645?mt=8"
 browser.get(url)
 
-# 根据id找到标签并模拟点击操作
-browser.find_element_by_id("modal-trigger-ember231").click()
+# 由于id一直会变化,所以根据class找到标签并模拟点击操作
+browser.find_element_by_css_selector("[class='we-modal__show link']").click()
 
 # appVersions = browser.find_element_by_class_name("version-history__item")
 # print('源码为：'+ appVersions.get_attribute('innerHTML'))
