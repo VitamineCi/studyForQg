@@ -54,6 +54,8 @@ for appVersion in appVersionList:
     print("version: " + appVersion['version'] + "\ntime:" + appVersion['time'])
     i = i + 1
 
+print("\n")
+
 if os.path.exists('version.json') == True:
     dataFile = open('version.json','r')
     listFile = json.load(dataFile)
@@ -61,10 +63,11 @@ if os.path.exists('version.json') == True:
         print("App未更新")
     else:
         print("App已更新")
-        print("最新版本为：%s" %appVersionList[0]['version'])
-        print("更新日期为：%s" %appVersionList[0]['time'])
         saveData(appVersionList)
 else:
     saveData(appVersionList)
+
+print("最新版本为：%s" %appVersionList[0]['version'])
+print("更新日期为：%s" %appVersionList[0]['time'])
 
 
